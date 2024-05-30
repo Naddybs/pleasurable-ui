@@ -64,7 +64,6 @@ fetchJson(apiUrl).then((apiData) => {
 
     app.post('/submit-rating', (req, res) => {
         const ratings = req.body;
-       
         console.log(ratings);
     
         // Dit voegt de gegevens toe aan de juiste arrays, dus de beoordelingen van de gebruiker worden hier opgeslagen in de arrays.

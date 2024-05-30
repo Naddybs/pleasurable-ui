@@ -1,3 +1,4 @@
+<div class="pop-over-container">
 <article class="beoordeling">
     <h3>Beoordeel dit huis</h3>
     <form id="scoreForm-<%= house.f_houses_id.house_nr %>" action="/submit-rating" method="POST" class="scoreForm">
@@ -85,11 +86,8 @@
             </div>
             <span class="rating-value" id="lig-value-<%= house.f_houses_id.house_nr %>">0</span>
         </div>
-
         <button type="submit" class="submit-rating">Verstuur beoordeling</button>
-    
     </form>
-    
-</article>
-</article>
+    </article>
+    </div>
 </div>

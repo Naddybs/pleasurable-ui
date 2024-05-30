@@ -299,19 +299,6 @@ img{
     line-height: 2.2em;
 }
 
-/* Stijl voor de knop voor het indienen van de beoordeling */
-/* .submit-ranking {
-    background-color: #f59f00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 0.75em 1.5em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    display: block;
-    width: 100%;
-    text-align: center;
-} */
 /* Standaardstijl voor de knop */
 .submit-rating {
     background-color: #f59f00;
@@ -369,5 +356,58 @@ img{
 
 /* -----------------------------rating section end------------------------------------/ */
 
+/* -----------------------------pop over section------------------------------------ */
+.beoordeling {
+    display: none;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* Hogere z-index waarde */
+  }
+  /* Stijl voor de pop-over */
+.pop-over-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Zorg ervoor dat de pop-over bovenop andere elementen wordt weergegeven */
+}
+/* -----------------------------pop over section------------------------------------ */
+.beoordeling {
+    display: none;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* Hogere z-index waarde */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+/* Blur overlay stijl */
+.blur-overlay {
+    display: none;
+    position: fixed; /* Plaats het element vast */
+    top: 0; /* Positioneer het bovenaan de pagina */
+    left: 0; /* Positioneer het links van de pagina */
+    width: 100%; /* Maak het even breed als de pagina */
+    height: 100%; /* Maak het even hoog als de pagina */
+    background-color: rgba(0, 0, 0, 0.5); /* Voeg een semi-transparante zwarte achtergrond toe */
+    z-index: 1000; /* Plaats het achter de pop-over, maar boven de rest van de pagina */
+}
 
+.blur-overlay.show {
+    display: block; /* Toon de blur overlay wanneer de klasse show wordt toegevoegd */ 
+}
+
+.beoordeling.show-pop-over {
+    display: block; /* Toon de beoordelingssectie wanneer de klasse show-pop-over wordt toegevoegd */
+}
+
+/* -----------------------------pop over section------------------------------------ */
+.beoordeling.show-pop-over {
+    display: block; /* Toon de beoordelingssectie wanneer de klasse show-pop-over wordt toegevoegd */
+}
+
+/* -----------------------------pop over section end------------------------------------ */

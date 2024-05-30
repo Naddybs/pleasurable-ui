@@ -9,12 +9,14 @@
 <!-------------------------------intro section end--------------------------------------->
 
 <!-------------------------------house-list section--------------------------------------->
+
 <section class="house-list">
     <div class="list-name">
         <h2>Eerste woning</h2>
         <button class="add-house-button">Zie alle lijsten</button>
   
     </div>
+    <div class="blur-background"></div>
     <% houses.forEach(function(house) { %>
         <div class="house-card">
             <img src="https://fdnd-agency.directus.app/assets/<%= house.f_houses_id.poster_image %>" alt="Afbeelding van een huis" class="house-image">
@@ -26,13 +28,12 @@
                 <button class="rating-button">Beoordeling toevoegen</button>
             </article>
         </div>
-
 <!-------------------------------house-list section end--------------------------------------->
 
 <!-------------------------------rating section--------------------------------------->
 <%- include('./partials/rating', { house: house }) %>  <!-- Deze regel voegt de inhoud van rating.ejs toe aan de pagina -->
     <% }) %>
 </section>
-
+<div class="blur-overlay"></div>
 </body>
 </html>

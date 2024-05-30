@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 // Selecteer alle formulieren
 let forms = document.querySelectorAll('.scoreForm');
 
@@ -74,4 +73,44 @@ forms.forEach(function (form) {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const ratingButtons = document.querySelectorAll('.rating-button');
+    const blurOverlay = document.querySelector('.blur-overlay');
+    const popOverContainers = document.querySelectorAll('.pop-over-container');
 
+    ratingButtons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+            // Verberg alle pop-overcontainers eerst
+            popOverContainers.forEach(container => container.classList.remove('show-pop-over'));
+            blurOverlay.classList.remove('show');
+            
+            // Toon de bijbehorende pop-overcontainer
+            popOverContainers[index].classList.add('show-pop-over');
+            blurOverlay.classList.add('show');
+        });
+    });
+
+    blurOverlay.addEventListener('click', function() {
+        popOverContainers.forEach(container => container.classList.remove('show-pop-over'));
+        blurOverlay.classList.remove('show');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const ratingButtons = document.querySelectorAll('.rating-button');
+    const ratingPopOver = document.querySelector('.beoordeling');
+
+    ratingButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Toon of verberg de beoordelingssectie op basis van de huidige zichtbaarheid
+            if (ratingPopOver.classList.contains('show-pop-over')) {
+                ratingPopOver.classList.remove('show-pop-over');
+            } else {
+                ratingPopOver.classList.add('show-pop-over');
+            }
+
+            // Voeg een klasse toe aan de body om het vervaagde achtergrondeffect te activeren
+            document.body.classList.toggle('blur-background');
+        });
+    });
+});
